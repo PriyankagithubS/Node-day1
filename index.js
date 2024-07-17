@@ -23,6 +23,9 @@ async function ensureFolderExists(folder) {
 }
 await ensureFolderExists(FOLDER_PATH);
 
+app.use('/',async(req,res)=> {
+   res.status(200).send("App is working fine");
+});
 // API endpoint to create a text file with the current timestamp
 app.post('/create-timestamp', async (req, res) => {
     const timestamp = new Date().toISOString();
